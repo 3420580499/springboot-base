@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>运算符</title>
+</head>
+<body>
+<!--
+    三元运算 ：表达式?” 正确结果”:” 错误结果”
+    算术运算： ：+ , - , * , / , %
+    关系比较: ：> , < , >= , <= ( gt , lt , ge , le )
+    相等判断： ：== , != ( eq , ne )
+
+    ne -> not equal
+    eq -> equal
+    ge -> great equal
+    le -> little equal
+    gt -> great
+    lt -> little
+-->
+<h1>三元运算符 表达式?正确:错误</h1>
+<div th:text="${sex eq 1 ? '男':'女'}"></div>
+<div th:text="${sex == 1 ? '男':'女'}"></div>
+
+<h1>算术运算</h1>
+20+5=<span th:text="20+5"></span><br/>
+20-5=<span th:text="20-5"></span><br/>
+20*5=<span th:text="20*5"></span><br/>
+20/5=<span th:text="20/5"></span><br/>
+20%3=<span th:text="20%3"></span><br/>
+
+<h1>关系比较</h1>
+5>2为<span th:if="5 gt 2">真</span><br/>
+5>2为<span th:if="5 > 2">真</span><br/>
+5<2<span th:unless="5 lt 2">真</span><br/>
+5<2<span th:unless="5 < 2">真</span><br/>
+1>=1<span th:if="1 ge 1">真</span><br/>
+1>=1<span th:if="1 >= 1">真</span><br/>
+1<=1<span th:if="1 le 1">真</span><br/>
+1<=1<span th:if="1 <= 1">真</span><br/>
+
+<h1>相等判断</h1>
+<span th:if="${sex == 1}">男</span>
+<span th:if="${sex eq 1}">男</span>
+<span th:unless="${sex ne 1}">女</span>
+
+</body>
+</html>

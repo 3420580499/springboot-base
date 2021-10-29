@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/07-springboot-mybatis" />
+    <file type="web" url="file://$PROJECT_DIR$/19-springboot-war" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/01-springboot-start/pom.xml" />
+        <option value="$PROJECT_DIR$/02-springboot-springmvc/pom.xml" />
+        <option value="$PROJECT_DIR$/03-springboot-contextpath/pom.xml" />
+        <option value="$PROJECT_DIR$/04-springboot-multi-configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/05-springboot-custom-configuration/pom.xml" />
+        <option value="$PROJECT_DIR$/06-springboot-jsp/pom.xml" />
+        <option value="$PROJECT_DIR$/07-springboot-mybatis/pom.xml" />
+        <option value="$PROJECT_DIR$/08-springboot-mybatis-transaction/pom.xml" />
+        <option value="$PROJECT_DIR$/09-springboot-javaproject-one/pom.xml" />
+        <option value="$PROJECT_DIR$/10-springboot-javaproject-two/pom.xml" />
+        <option value="$PROJECT_DIR$/11-springboot-springmvc-interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/12-springboot-servlet-one/pom.xml" />
+        <option value="$PROJECT_DIR$/13-springboot-servlet-two/pom.xml" />
+        <option value="$PROJECT_DIR$/14-springboot-logo/pom.xml" />
+        <option value="$PROJECT_DIR$/15-springboot-filter/pom.xml" />
+        <option value="$PROJECT_DIR$/16-springboot-filter-config/pom.xml" />
+        <option value="$PROJECT_DIR$/17-springboot-character-encoding-one/pom.xml" />
+        <option value="$PROJECT_DIR$/18-springboot-character-encoding-two/pom.xml" />
+        <option value="$PROJECT_DIR$/19-springboot-war/pom.xml" />
+        <option value="$PROJECT_DIR$/20-springboot-jarr/pom.xml" />
+        <option value="$PROJECT_DIR$/20-springboot-jar/pom.xml" />
+        <option value="$PROJECT_DIR$/21-springboot-thymeleaf/pom.xml" />
+        <option value="$PROJECT_DIR$/22-springboot-thymeleaf-expression/pom.xml" />
+        <option value="$PROJECT_DIR$/23-springboot-thymeleaf-foreach/pom.xml" />
+        <option value="$PROJECT_DIR$/24-springboot-thymeleaf-if/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

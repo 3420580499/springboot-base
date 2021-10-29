@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.5</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.strive.springboot</groupId>
+    <artifactId>06-springboot-jsp</artifactId>
+    <version>1.0</version>
+    <name>06-springboot-jsp</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--引入springboot内嵌Tomcat对jsp的解析依赖,不添加这个解析不了jsp-->
+        <!--仅仅只是展示jsp页面,只添加下一个依赖-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--
+           有时候会出现访问路径找不到页面的情况,可能是我们建立了多个springboot项目的模块,
+           我们可以使用maven插件中的springboot run来运行项目-->
+        <!--
+            springboot项目默认推荐使用的前端模板引擎是thymeleaf
+            现在我们要使用springboot集成jsp,手动指定jsp最后编译的路径
+            而且springboot集成jsp编译jsp的路径是springboot规定好的位置
+            META-INF/resource
+        -->
+        <resources>
+            <!--指定你jsp要编译后放到的位置-->
+            <resource>
+                <!--源文件-->
+                <directory>src/main/webapp</directory>
+                <!--指定编译到 META-INF/resources-->
+                <targetPath>META-INF/resources</targetPath>
+                <includes>
+                    <!--指定源文件中哪个文件要被编译进行-->
+                    <include>*.*</include>
+                </includes>
+            </resource>
+            <!--重新指定资源文件夹的位置,上面已经改掉了-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.2.RELEASE</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

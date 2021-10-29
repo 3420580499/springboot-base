@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--使用标准表达式(推荐)-->
+<h1 th:text="${info.id}"></h1>
+<h1 th:text="${info.name}"></h1>
+<h1 th:text="${info.age}"></h1>
+<!--使用选择变量表达式(星号表达式)-->
+<div th:object="${info}">
+    <h1 th:text="*{id}"></h1>
+    <h1 th:text="*{name}"></h1>
+    <h1 th:text="*{age}"></h1>
+</div>
+<!--混合使用-->
+<h1 th:text="*{info.id}"></h1>
+<h1 th:text="*{info.name}"></h1>
+<h1 th:text="*{info.age}"></h1>
+</body>
+</html>

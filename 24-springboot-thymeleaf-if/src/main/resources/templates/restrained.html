@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>内敛表达式</title>
+</head>
+<body th:inline="text">
+<div th:text="${data}">xxx</div>
+<h3 th:text="${data}">xxx</h3>
+
+<h1>内敛文本: th:inline="text"</h1>
+<div th:inline="text">
+
+    数据:[[${data}]]
+
+</div>
+
+数据outside:[[${data}]]
+
+<h1>内敛脚本 th:inline="javascript"</h1>
+<script type="text/javascript"  th:inline="javascript">
+    function showData() {
+        alert([[${data}]]);
+        alert("----");
+    }
+</script>
+<button th:onclick="showData()">展示数据</button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>路径表达式的使用</title>
+</head>
+<body>
+<h1>绝对路径</h1>
+<a href="http://localhost:8081/index">普通的链接</a>
+<a th:href="@{http://localhost:8081/index}">使用了路径表达式的链接</a>
+
+<h1>相对路径</h1>
+<a href="/index">普通方式下使用相对路径</a>
+<a th:href="@{/index}">相对路径是用路径表达式</a>
+
+<h1>携带参数</h1>
+<a href="/test?name=李四">使用普通方式携带参数信息</a>
+<a th:href="@{/test?name=李四}">使用表达式来携带参数信息</a>
+<a th:href="@{/test(name=李四)}">使用表达式的简化版来携带参数信息</a>
+
+<h1>后台获取的参数值</h1>
+<a th:href="@{'/test2?name='+${user.name}}">相对路径:获取后台参数值</a>
+<a th:href="@{/test1(name=${user.name},id=${user.id},age=${user.age})}">相对路径:获取后台参数值(简化的写法)</a>
+
+<h1>使用restful风格</h1>
+<a th:href="@{'/test3/'+${user.age}}">使用restful风格</a>
+</body>
+</html>

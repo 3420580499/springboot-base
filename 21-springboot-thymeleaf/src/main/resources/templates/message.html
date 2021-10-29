@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--引入约束文件-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--可以直接访问到static目录下的文件-->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<!--不使用缓存的方法:先在主配置文件中把缓存关了,然后在主入口函数中勾选update resources-->
+
+<!--thymeleaf模板引擎的页面必须得通过中央调度器(直接访问是访问不到的)-->
+<!--
+xmlns:th="http://www.thymeleaf.org"
+xmlns -> 命名空间
+命名空间后面的地址是一个约束文件,约束你使用thymeleaf表达式
+的一个规则文件,就好比我们之前在xml文件中的一此dtd文件
+-->
+<!--
+    为什么使用了th前缀就可以获取后台数据?
+    那是因为项目中添加了thymeleaf的核心依赖,它的核心依赖会去
+    解析thymeleaf自己定义的这些标签名称,通过thymeleaf自己的java核心
+    代码来获取我们的后台数据
+-->
+<h1 th:text="${message}">信息</h1>
+<h1 th:text="${message}">信息</h1>
+<h1 th:text="${message}">信息</h1>
+<h1 th:text="${message}">信息</h1>
+<h1 th:text="${message}">信息</h1>
+<h1 th:text="${message}">信息</h1>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.6</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.strive.springboot</groupId>
+    <artifactId>20-springboot-jar</artifactId>
+    <version>1.0</version>
+    <name>20-springboot-jar</name>
+    <description>Demo project for Spring Boot</description>
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!--引入springboot内嵌Tomcat对jsp的解析依赖,不添加这个解析不了jsp-->
+        <!--仅仅只是展示jsp页面,只添加下一个依赖-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>springboot-jar</finalName>
+        <resources>
+            <!--指定你jsp要编译后放到的位置-->
+            <resource>
+                <!--源文件-->
+                <directory>src/main/webapp</directory>
+                <!--指定编译到 META-INF/resources-->
+                <targetPath>META-INF/resources</targetPath>
+                <includes>
+                    <!--指定源文件中哪个文件要被编译进行-->
+                    <include>*.*</include>
+                </includes>
+            </resource>
+            <!--重新指定资源文件夹的位置,上面已经改掉了-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.*</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <!--打成jar包一定要注意吧这里的编译插件版本改为1.4.2,否则会找不到-->
+            <!--jar包里内置了Tomcat,我们只需要在cmd中使用java -jar springboot-jar.jar来运行-->
+            <!--war包依然要通过安装的Tomcat来运行,吧war包复制到webapps目录下,访问的路径要加上文件名-->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.2.RELEASE</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

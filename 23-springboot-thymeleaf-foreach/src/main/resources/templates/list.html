@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    user 当前循环的对象变量名称(随意)
+    userStat 当前循环对象状态的变量(可选默认就是对象变量名称+Stat)
+    ${userList} 当前循环的集合
+-->
+<h1>遍历list集合</h1>
+<div th:each="user,userStat:${list}">
+  <div th:text="${userStat.index}"></div>
+  <div th:text="${user.id}"></div>
+  <div th:text="${user.name}"></div>
+  <div th:text="${user.age}"></div>
+</div>
+</body>
+</html>

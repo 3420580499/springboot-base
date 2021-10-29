@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>格式化日期</title>
+</head>
+<body>
+<div th:text="${time}"></div>
+<div th:text="${#dates.format(time,'yyyy-MM-dd HH:mm:ss')}"></div>
+<div th:text="${data}"></div>
+<div th:text="${#strings.substring(data,0,2)}"></div>
+<div th:text="${#lists}"></div>
+</body>
+</html>
